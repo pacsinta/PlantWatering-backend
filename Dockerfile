@@ -7,5 +7,4 @@ RUN gradle shadowJar --no-daemon
 FROM openjdk:18
 EXPOSE 8001
 COPY --from=builder /home/gradle/src/build/libs/*.jar /app/PlantWatering-backend.jar
-COPY src/main/resources/pages /app/pages
 CMD cd /app && java -jar PlantWatering-backend.jar
